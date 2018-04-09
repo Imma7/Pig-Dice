@@ -19,11 +19,26 @@ Player.prototype.rollOne = function() {
     if (this.roll === 1) {
         this.tempscore = 0;
         alert("Sorry" + this.playerName + " you got a 1. Your turn is over!")
-        // change turn
+
     } else {
         this.tempscore += this.roll;
     }
 }
+
+// Hold
+Player.prototype.hold = function() {
+    this.totalscore +=
+    this.tempscore;
+    this.tempscore = 0;
+    alert(this.playerName + ",  your round is over. Pass it to the next Player!");
+}
+
+Player.prototype.checkWinner = function() {
+    if (this.totalscore >= 100) {
+        alert(this.playerName + "You are the winner!");
+    }
+}
+
 
 
 // User Interface Logic
@@ -59,7 +74,7 @@ $(document).ready(function(){
         $(".inputform").show();
     });
 
-
+    // Roll
     $("button#p1Roll").click(function(event) {
         player1.roll = randomNum();
         $("#rollDie1").text(player1.roll);
@@ -74,6 +89,21 @@ $(document).ready(function(){
         $("#score2").text(player2.tempscore);   
     });
     
+    // Hold
+    $("button#p1Hold").click(function(event) {
+        player1.hold();
+        $("total1").text(player1.totalscore)
+        $("#score1").empty();
+        $("rollDie1").empty();
+        player1.checkWinner();
+    });
 
-    
+    $("button#p2Hold").click(function(event) {
+        player2.hold();
+        $("total2").text(player2.totalscore)
+        $("#score2").empty();
+        $("#rollDie2").empty();
+        player2.checkWinner();
+    });
+ 
 });
