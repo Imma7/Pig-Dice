@@ -10,7 +10,7 @@ function Player(turn) {
     this.roll = 0;
     this.tempscore = 0;
     this.totalscore = 0;
-    this.turn = 0;
+    this.turn = turn;
     this.playerName;
 }
 
@@ -18,7 +18,7 @@ function Player(turn) {
 Player.prototype.rollOne = function() {
     if (this.roll === 1) {
         this.tempscore = 0;
-        alert("Sorry" + this.playerName + " you got a 1. Your turn is over!")
+        alert("Sorry" + this.playerName + "  you got a 1. Your turn is over!")
 
     } else {
         this.tempscore += this.roll;
@@ -26,10 +26,10 @@ Player.prototype.rollOne = function() {
 }
 
 // Hold
-Player.prototype.hold = function() {
-    this.totalscore +=
-    this.tempscore;
-    this.tempscore = 0;
+Player.prototype.hold =  function () { 
+    this.totalscore += this.tempscore;
+        this.tempscore = 0;
+        // changeturn
     alert(this.playerName + ",  your round is over. Pass it to the next Player!");
 }
 
@@ -39,6 +39,17 @@ Player.prototype.checkWinner = function() {
     }
 }
 
+Player.prototype.newGame = function() {
+    this.roll = 0;
+    this.tempscore = 0;
+    this.totalscore = 0;
+    this.playerName = "";
+}
+
+var clearValues=function(){
+    $(".player1Name").val("")
+    $(".player2name").val("")
+}
 
 
 // User Interface Logic
@@ -50,20 +61,26 @@ $(document).ready(function(){
       $(".inputform").hide();
 
       var player1Name = $(".player1Name").val();
-      ("#player1Name").text(player1Name);
+      $("#player1Name").text(player1Name);
 
       var player2Name = $(".player2Name").val();
-      ("#player2Name").text(player2Name);
+      $("#player2Name").text(player2Name);
 
       player1.playerName = player1Name;
       player2.playerName = player2Name;
     });
 
-    $("button#newGame").click(function(event) {
+    
+
+     $("button#newGame").click(function(event) {
         $(".players").hide();
         clearValues();
-        player1.newGame();
-        player2.newGame();
+        // $("input#player1").val("");
+        // $("input#player2").val("");
+        // player1Name.newGame();
+        // player1Name.player1Name();
+        // player2Name.player2Name();
+        // player2Name.newGame();
         $("#rollDie1").empty();
         $("#score1").empty();
         $("#total1").empty();
@@ -76,16 +93,17 @@ $(document).ready(function(){
 
     // Roll
     $("button#p1Roll").click(function(event) {
-        player1.roll = randomNum();
+        player1.roll=
+         randomNum();
         $("#rollDie1").text(player1.roll);
-        p1.rollOne();
+        player1.rollOne();
         $("#score1").text(player1.tempscore);
     });
 
     $("button#p2Roll").click(function(event) {
         player2.roll = randomNum();
         $("#rollDie2").text(player2.roll);
-        p2.rollOne();
+        player2.rollOne();
         $("#score2").text(player2.tempscore);   
     });
     
