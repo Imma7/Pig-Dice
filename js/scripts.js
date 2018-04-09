@@ -61,12 +61,19 @@ $(document).ready(function(){
 
 
     $("button#p1Roll").click(function(event) {
-        p1.roll = randomNum();
-        $("#rollDie1").text(p1.roll);
+        player1.roll = randomNum();
+        $("#rollDie1").text(player1.roll);
         p1.rollOne();
         $("#score1").text(player1.tempscore);
-
     });
+
+    $("button#p2Roll").click(function(event) {
+        player2.roll = randomNum();
+        $("#rollDie2").text(player2.roll);
+        p2.rollOne();
+        $("#score2").text(player2.tempscore);   
+    });
+    
 
     
 });
