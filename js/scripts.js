@@ -32,7 +32,7 @@ $(document).ready(function(){
       player1 = new Player(true);
       player2 = new Player(false);
 
-      $(".container").hide();
+      $(".inputform").hide();
 
       var player1Name = $(".player1Name").val();
       ("#player1Name").text(player1Name);
@@ -42,8 +42,23 @@ $(document).ready(function(){
 
       player1.playerName = player1Name;
       player2.playerName = player2Name;
+    });
 
-      
+    $("button#newGame").click(function(event) {
+        $(".players").hide();
+        clearValues();
+        player1.newGame();
+        player2.newGame();
+        $("#rollDie1").empty();
+        $("#score1").empty();
+        $("#total1").empty();
+        $("#rollDie2").empty();
+        $("#score2").empty();
+        $("#total2").empty();
+
+        $(".inputform").show();
+    });
+
 
     $("button#p1Roll").click(function(event) {
         p1.roll = randomNum();
@@ -53,5 +68,5 @@ $(document).ready(function(){
 
     });
 
-    });
+    
 });
