@@ -2,6 +2,7 @@
     text-align: center;
     background-image: url(../images/cube.jpg);
     background-repeat: no-repeat;
+    text-align: right;
     /* margin: 0px; */
     margin-top: 20px;
     padding: 10px;
@@ -20,3 +21,4 @@ body{
 input, select, textarea{
     color: #f00;
 }
+
