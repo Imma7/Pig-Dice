@@ -18,7 +18,7 @@ function Player(turn) {
 Player.prototype.rollOne = function() {
     if (this.roll === 1) {
         this.tempscore = 0;
-        alert("Sorry" + this.playerName + "  you got a 1. Your turn is over!")
+        alert("Sorry " + this.playerName + "  you got a 1. Your turn is over!")
 
     } else {
         this.tempscore += this.roll;
@@ -48,7 +48,7 @@ Player.prototype.newGame = function() {
 
 var clearValues=function(){
     $(".player1Name").val("")
-    $(".player2name").val("")
+    $(".player2Name").val("")
 }
 
 
@@ -65,9 +65,12 @@ $(document).ready(function(){
 
       var player2Name = $(".player2Name").val();
       $("#player2Name").text(player2Name);
+      alert(player2Name)
 
       player1.playerName = player1Name;
       player2.playerName = player2Name;
+
+      $(".newGame").show();
     });
 
     
