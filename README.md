@@ -28,7 +28,7 @@ The website can be found using the following address: "https://imma7.github.io/P
 ### License
 *The site and materials can be accessed by the public freely*
 
-Copyright (c) 2018 **Immanuel Mugambi**
+Copyright (c) 2018 **_Immanuel Mugambi_**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
