@@ -65,7 +65,7 @@ $(document).ready(function(){
 
       var player2Name = $(".player2Name").val();
       $("#player2Name").text(player2Name);
-      alert(player2Name)
+    //   alert(player2Name)
 
       player1.playerName = player1Name;
       player2.playerName = player2Name;
