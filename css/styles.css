@@ -2,7 +2,8 @@
     text-align: center;
     background-image: url(../images/cube.jpg);
     background-repeat: no-repeat;
-    text-align: right;
+    text-align: left;
+    background-position: right;
     /* margin: 0px; */
     margin-top: 20px;
     padding: 10px;
