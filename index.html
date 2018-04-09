@@ -15,7 +15,7 @@
           <form action="">
             <div class="col-md-6">
             <p>Player 1 Name:</p>
-            <input type="text" name="player1name">
+            <input required class="player1Name" type="text" name="player1name">
             </div>
             <br>
             <div class="col-md-6">
@@ -26,20 +26,31 @@
         </div>
 
         <br>
-        <button type="submit" class="btn btn-primary">Start</button>
-        <button type="submit" class="btn btn-primary">New Game</button>
+        <button id="start" type="submit" class="btn btn-primary">Start</button>
+        <button id="newGame" type="submit" class="btn btn-primary">New Game</button>
+
+        <br>
+        <br>
 
         <div class="players">
         <div class="col-md-6">
-            <h2>Player 1</h2>
-            <button type="submit" class="btn btn-primary">Roll</button>
-            <button type="submit" class="btn btn-primary">Hold</button>
+            <h2>Player 1<span id="player1Name"></span></h2>
+            <button id="p1Roll" type="submit" class="btn btn-primary">Roll</button>
+            <button id="player1Hold" type="submit" class="btn btn-primary">Hold</button>
+
+            <h3>Dice Roll:<span id="rollDie1"></span></h3>
+            <p>Score:<span id="score1"></span></p>
+            <p>Total:</p>
         </div>
 
         <div class="col-md-6">
-            <h2>Player 2</h2>
-            <button type="submit" class="btn btn-primary">Roll</button>
-            <button type="submit" class="btn btn-primary">Hold</button>
+            <h2>Player 2<span id="player2Name"></span></h2>
+            <button id="player2Roll" type="submit" class="btn btn-primary">Roll</button>
+            <button id="player2Hold" type="submit" class="btn btn-primary">Hold</button>
+
+            <h3>Dice Roll:</h3>
+            <p>Score:</p>
+            <p>Total:</p>
         </div>
         </div>
 
